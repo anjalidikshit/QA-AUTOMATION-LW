@@ -12,3 +12,4 @@ def test_create_post():
     response = requests.post(BASE_URL, json=payload)
     assert response.status_code == 201
     assert response.json()["title"] == "foo"
+
