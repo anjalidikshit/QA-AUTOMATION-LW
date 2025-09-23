@@ -1,9 +1,4 @@
 pytest
-playwright
-<<<<<<< HEAD
-pytest-playwright
 pytest-html
-=======
->>>>>>> 4beaae2 (First commit without venv)
+playwright
 requests
-

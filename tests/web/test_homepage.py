@@ -1,8 +1,9 @@
 import pytest
 from utils import config, logger
-from .pages.home_page import HomePage
+from tests.web.pages.home_page import HomePage
 
 log = logger.get_logger(__name__)
+
 
 @pytest.mark.parametrize("url", [config.BASE_URL])
 def test_homepage_loads(page, url):
@@ -17,4 +18,4 @@ def test_homepage_loads(page, url):
     log.info("Checking hero section visibility")
     assert homepage.is_hero_visible(), "Hero section not visible"
 
-    log.info("Homepage loaded and verified successfully.")
+    log.info("Homepage test completed successfully.")

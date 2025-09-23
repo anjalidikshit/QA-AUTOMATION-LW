@@ -1,2 +1,2 @@
-BASE_URL = "https://www.lw.com"
-TIMEOUT = 10000  # Timeout in milliseconds
+BASE_URL = "https://www.lw.com"  # Latham & Watkins homepage
+API_URL = "https://jsonplaceholder.typicode.com"  # Sample public API for demo
