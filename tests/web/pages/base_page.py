@@ -4,7 +4,7 @@ class BasePage:
         self.page = page
 
     async def visit(self, url: str):
-        await self.page.goto(url)
+        await self.page.goto(url, wait_until="domcontentloaded")
 
     async def get_title(self):
         return await self.page.title()
