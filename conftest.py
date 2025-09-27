@@ -1,20 +1,20 @@
 import pytest
-from playwright.sync_api import sync_playwright
+from playwright.async_api import async_playwright
 
 
 @pytest.fixture(scope="session")
-def browser():
-    """Launch a single browser for the session."""
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, slow_mo=50)
+async def browser():
+    """Launch a single browser for the session (async)."""
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True, slow_mo=50)
         yield browser
-        browser.close()
+        await browser.close()
 
 
 @pytest.fixture(scope="function")
-def page(browser):
-    """Fresh browser page for each test."""
-    context = browser.new_context()
-    page = context.new_page()
+async def page(browser):
+    """Fresh browser page for each test (async)."""
+    context = await browser.new_context()
+    page = await context.new_page()
     yield page
-    context.close()
+    await context.close()
